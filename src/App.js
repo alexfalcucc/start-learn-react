@@ -1,21 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      txt: 'thi is the state txt'
+    }
+  }
+
+  update(e) {
+    this.setState({
+      txt: e.target.value
+    });
+  }
+
   render() {
+    let txt = this.props.txt
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <input type="text" onChange={this.update.bind(this)}/>
+        <h1>{this.state.txt}</h1>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
