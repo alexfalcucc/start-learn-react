@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
-import styles from './App.css';
 
 class App extends Component {
   static propTypes = {
@@ -14,9 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.base}>
-
-      </div>
+      <h1>Hey there</h1>
     );
   }
 }
